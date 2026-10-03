@@ -6,8 +6,9 @@ extends Node
 
 func _ready() -> void:
 	# debug only, expand later
-	crew_manager._request_research()
-	research_system._start_researching()
+	crew_manager._request_hull_repair()
+	#crew_manager._request_research()
+	#research_system._start_researching()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

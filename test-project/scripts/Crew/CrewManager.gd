@@ -2,18 +2,12 @@ extends Node
 
 var crew_members = []
 
-
-
 @onready var hull_system = get_node("../HullSystem")
 
 func _ready() -> void:
 	crew_members = get_children()
-	
-	for i in 2:
-		print(crew_members[i].crew_member_name)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
@@ -33,16 +27,14 @@ func _request_hull_repair():  # move to a general task/game manager later
 		print("No crew member available")
 		return
 		
-	print("fixing")
-	crew_member._set_crew_busy()
+	var repair_task = Task.new()
 	
-	await get_tree().create_timer(5.0).timeout
+	repair_task.task_name = "Hull Repair Task"
+	repair_task.task_type = Task.TaskType.REPAIR
+	repair_task.duration = 5.0
+	repair_task.target = hull_system
 	
-	hull_system._repair_hull()
-	
-	crew_member._set_crew_free()
-	
-	print("fixed breach")
+	crew_member._assign_task(repair_task)
 	
 	
 func _request_research():

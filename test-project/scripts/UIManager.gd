@@ -16,11 +16,6 @@ extends Node
 @onready var crew_2_label = get_node("PanelContainer/VBoxContainer/Crew2Label")
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 		depth_label.text = "Depth: " + str(depth_system.current_depth) + "m"
@@ -31,7 +26,7 @@ func _process(delta: float) -> void:
 		research_label.text = "Research level: " + str(research_system.research_level)
 		research_bar.value = research_system.current_research_xp
 		
-		crew_1_label.text = "Crew 1: " + crew_manager.crew_members[0].get_status_text()
-		crew_2_label.text = "Crew 2: " + crew_manager.crew_members[1].get_status_text()
+		#crew_1_label.text = "Crew 1: " + crew_manager.crew_members[0].current_task.task_type
+		#crew_2_label.text = "Crew 2: " + crew_manager.crew_members[1].current_task.task_type
 		
 		
