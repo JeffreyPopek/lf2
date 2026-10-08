@@ -36,6 +36,22 @@ func _request_hull_repair():  # move to a general task/game manager later
 	
 	crew_member._assign_task(repair_task)
 	
+func _request_leak_repair():
+	var crew_member = _request_crew_member()
+	
+	if crew_member == null:
+		print("No crew member available")
+		return
+		
+	var leak_task = Task.new()
+	
+	leak_task.task_name = "Leak Repair Task"
+	leak_task.task_type = Task.TaskType.LEAK
+	leak_task.duration = 5.0
+	leak_task.target = hull_system
+	
+	crew_member._assign_task(leak_task)
+	
 	
 func _request_research():
 	var crew_member = _request_crew_member()

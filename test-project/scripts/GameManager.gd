@@ -21,6 +21,9 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("Repair"):
 		crew_manager._request_hull_repair()
+		
+	if Input.is_action_just_pressed("Fix_Leak"):
+		crew_manager._request_leak_repair()
 
 
 func _show_menu():

@@ -4,7 +4,8 @@ extends RefCounted
 
 enum TaskType {
 	REPAIR,
-	RESEARCH
+	RESEARCH,
+	LEAK
 }
 
 var task_name : String
@@ -25,5 +26,7 @@ func is_complete():
 func complete():
 	if task_type == TaskType.REPAIR:
 		target._repair_hull()
+	elif task_type == TaskType.LEAK:
+		target._fix_leak()
 		
 	print(task_name, " task completed")

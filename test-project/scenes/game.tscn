@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cbjr3iwi5a848"]
 
 [ext_resource type="Script" uid="uid://3vmprvatqqp5" path="res://scripts/GameManager.gd" id="1_iywne"]
-[ext_resource type="Script" uid="uid://bi6dc5j6glmmm" path="res://scripts/HullSystem.gd" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://bi6dc5j6glmmm" path="res://scripts/Systems/HullSystem.gd" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://b1tocp0wlgjne" path="res://scripts/Crew/CrewManager.gd" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://bvpj8km2hawby" path="res://scripts/Crew/CrewMember.gd" id="3_lbhrr"]
-[ext_resource type="Script" uid="uid://4duv66uf5ce8" path="res://scripts/ResearchSystem.gd" id="3_lnu2h"]
-[ext_resource type="Script" uid="uid://3xmsycew6np4" path="res://scripts/DepthSystem.gd" id="6_p57ef"]
+[ext_resource type="Script" uid="uid://4duv66uf5ce8" path="res://scripts/Systems/ResearchSystem.gd" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://3xmsycew6np4" path="res://scripts/Systems/DepthSystem.gd" id="6_p57ef"]
 [ext_resource type="Script" uid="uid://i0m81wjl7cig" path="res://scripts/UIManager.gd" id="7_u5sy4"]
 
 [node name="GameManager" type="Node2D" unique_id=1917788945]
@@ -76,3 +76,6 @@ text = "Crew 1: "
 [node name="Crew2Label" type="Label" parent="UI/PanelContainer/VBoxContainer" unique_id=1343465433]
 layout_mode = 2
 text = "Crew 2: "
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=424989397]
+position = Vector2(591, 324)

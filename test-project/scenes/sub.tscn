@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ke867a7yjet0"]
+
+[ext_resource type="Script" uid="uid://t4s1riecw4s7" path="res://scripts/Rooms/room.gd" id="1_gxgib"]
+
+[sub_resource type="Gradient" id="Gradient_m2nw4"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bd37w"]
+gradient = SubResource("Gradient_m2nw4")
+width = 200
+height = 100
+
+[sub_resource type="Gradient" id="Gradient_gxgib"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5h2n5"]
+gradient = SubResource("Gradient_gxgib")
+width = 20
+height = 40
+
+[sub_resource type="Gradient" id="Gradient_qemvb"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ipng8"]
+gradient = SubResource("Gradient_qemvb")
+width = 20
+height = 40
+
+[node name="Sub" type="Node2D" unique_id=537380673]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1576653022]
+zoom = Vector2(4, 4)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1329938148]
+texture = SubResource("GradientTexture2D_bd37w")
+
+[node name="Crew Member" type="Sprite2D" parent="Background" unique_id=1495287774]
+visible = false
+texture = SubResource("GradientTexture2D_5h2n5")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1227958776]
+texture = SubResource("GradientTexture2D_ipng8")
+
+[node name="PipeLeakTaskPos" type="Marker2D" parent="." unique_id=1137759971]
+position = Vector2(-67, 0)
+
+[node name="Room_Manager" type="Node" parent="." unique_id=1427133314]
+script = ExtResource("1_gxgib")
